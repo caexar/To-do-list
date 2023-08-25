@@ -41,7 +41,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     handleReset();
   };
 
-  const handleReset = (data) => { //se utiliza para restablecer los valores
+  const handleReset = () => { //se utiliza para restablecer los valores
     setForm(initailForm);
     setDataToEdit(null);
   };
