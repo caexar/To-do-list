@@ -7,7 +7,6 @@ function App() {
       <h1 className="navbar navbar-expand-lg bg-dark justify-content-center ">
         Lista de Tareas
       </h1>
-
       <ListaTareaApp />
     </>
   );

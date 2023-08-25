@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const initailForm = {
+const initailForm = { //inicializamos las variables del formulario
   titulo: "",
   descripcion: "",
   id: null,
@@ -9,7 +9,7 @@ const initailForm = {
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initailForm);
 
-  useEffect(() => {
+  useEffect(() => { //editar datos cambiando el funcionamiento de los componentes
     if (dataToEdit) {
       setForm(dataToEdit);
     } else {
@@ -17,14 +17,14 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     }
   }, [dataToEdit]);
 
-  const handleChange = (data) => {
+  const handleChange = (data) => { //se dispara cuando hay un cambio en los campos de entrada (input) del formulario
     setForm({
       ...form,
       [data.target.name]: data.target.value,
     });
   };
 
-  const handleSubmit = (data) => {
+  const handleSubmit = (data) => { //sirve para manejar la presentacion de un formulario(al mandar dato con un submit)
     data.preventDefault();
 
     if (!form.titulo || !form.descripcion) {
@@ -41,7 +41,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     handleReset();
   };
 
-  const handleReset = (data) => {
+  const handleReset = (data) => { //se utiliza para restablecer los valores
     setForm(initailForm);
     setDataToEdit(null);
   };

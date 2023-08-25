@@ -1,7 +1,7 @@
 import React from "react";
 
 const CrudTableRow = ({ elemento, setDataToEdit, deleteData }) => {
-  let { titulo, descripcion, id } = elemento;
+  let { titulo, descripcion, id } = elemento; //contiene todos los datos suministrado al momento de crear la tarea en el CRUD
 
   return (
     <tr>

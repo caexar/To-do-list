@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "./Form";
 import Table from "./Table";
 
-const initialDb = [
+const initialDb = [ //base de dato con ejemplos previamente llenados
   {
     id: 1692927436982,
     titulo: "Hacer la compra",
@@ -21,20 +21,20 @@ const initialDb = [
 ];
 
 const CrudApp = () => {
-  const [db, setDb] = useState(initialDb);
+  const [db, setDb] = useState(initialDb); 
   const [dataToEdit, setDataToEdit] = useState(null);
 
-  const createData = (data) => {
+  const createData = (data) => { //crear datos
     data.id = Date.now();
     setDb([...db, data]);
   };
 
-  const updateData = (data) => {
+  const updateData = (data) => { //actializar datos
     let newData = db.map((elemento) => (elemento.id === data.id ? data : elemento));
     setDb(newData);
   };
 
-  const deleteData = (id) => {
+  const deleteData = (id) => { //eliminar datos
     let isDelete = window.confirm(
       `¿Estás seguro de eliminar el registro con el id '${id}'?`
     );
